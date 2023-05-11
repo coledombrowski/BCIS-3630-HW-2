@@ -1,0 +1,67 @@
+# BCIS-3630
+Object Oriented Programming (3630) Homework Files
+ AVA TWO (Decision Structures) – 20 points from Gaddis Chapter 3 A. 23.2 – Tuition Calc (6 points)
+Write a program that calculates tuition based on the number of hours taken. Use JOptionPane to ask the user for the number of hours (what type of variable should it be if we’re using it in math and there are no decimals?). The program should calculate tuition at $300 per hour for the first 12 hours, then 250 after that. Course fees (building use, support, etc.) are $75 per hour for the first nine hours, then $50 after that. Campus fees (bus, medical, gym, etc.) are a one-time charge of $800. There are a couple of logic paths we can take. First, we can calculate all hours using $250/hr, then calculate hours over 12 using $50 (300-250) and add them together. Second, we can calculate using $300 for the first 12 hours, then if there are more than 12 hours, calculate the remaining hours at $250 and add them together. Use the if statement (pg 111) to determine if the rate change is required. The same logic can be used for the course fees. Use printf (using System.out.printf - pg 160-171) or String.format (using JoptionPane - pg 172) to format the output with a dollar sign, commas, and two decimals. (CC UNT-’23).
+Sample output for 18, 9, and 13 hours: Tuition for 18 hours is $7,025.00 Tuition for 9 hours is $4,175.00
+Tuition for 13 hours is $5,525.00
+Hints/Tips:
+You can either create a variable for the first level and another for the second, or you can add the calculated amount to the one variable (ex: tuition = tuition + part 2 calculation, OR tuition1=1st part, tuition2=2nd part, totTuition=tuition1+tuition2)
+Using printf or String.format, use %d with integers and %f with floating decimal (double or float) as $%,.2f (pg 160-171).
+I used if-else to handle over-the-hours different from under/equal the hours Don’t forget to import for JOptionPane.
+It took me a little about 14 minutes to complete.
+Rubric:
+Doesn’t use “if” -100%
+Doesn’t calculate correct tuition -50%
+Doesn’t ask user for input -20%
+Doesn’t use JOptionPane for input -10%
+Code is not properly formatted (indents, curly braces are aligned) -10%
+Doesn’t display output -20%
+*** This assignment is the proprietary property of The University of North Texas. You do NOT have permission to send it to anyone, especially a company like Chegg.com that writes programs and posts them on the Internet. That is a violation of copyright laws that can be grounds for prosecution.
+
+ B. 23.2 – Snow Cone Menu (8 Points)
+Write a program that calculates a snow cone's price based on the selected option. Use JOptionPane to ask the user for their desired option in the table below. Put the options, descriptions, and price in the JOptionPane message (use \n to go to the next line). Use switch (pg 150) to find the price, calculate the sales tax (see Java 1D), and notify the user. Accept upper or lowercase input. The sales tax rate is 8.25% again (but use .0825 in Java). The snow cone options are as follows:
+Option Description Price
+A Plain Snow Cone 1.50
+B Plain Cone with Cream 1.75
+C Rainbow (5 or more flavors) 2.00
+D Rainbow with Cream 2.25
+E Shaved Ice 2.50
+F Shaved Ice with Cream 2.75
+If the snow cone option entered is invalid, print a message and do not show the cost.
+Sample output for input of C or F:
+Option C – Rainbow (5 or more flavors) 2.00 + .17 tax = $2.17 Option F – Shaved Ice with Cream 2.75 + .23 tax = $2.98
+Hints/Tips:
+It took me almost 30 minutes to complete.
+Use default to set an error code so you can test to print the cost message or the error after the switch statement. How do you set an error code? It’s not as technical as you think. Create a field for the error code, put a value in it if the job class is invalid, then check the error code to ensure it’s not an error. You’ll need to give the error code an initial value because you would only set it if you get an error; thus, when you test it without the error code being set it will fail. Remember that JOptionPane returns a String. You can use toUpperCase(), or you can put ‘a’ and “A” in the case statement on switch (pg 157). If you use a char for the option, use charAt(0) (pg 74) to convert the string to a char. You can put everything at the end of JOptionPane() or do it like Gaddis does on pg 75.
+Create a variable for the option, description, price, and tax. You can also create a variable for the total or add them in the message (price+tax).
+In the switch, put the appropriate literals for the description and the price. EX: description = “Saved Ice”; price = 2.50. After the switch, use an if test to see if the option was valid. If so, create the message as shown in the Sample; otherwise, create the error message.
+Don’t forget the "break" in switch
+Because you can’t do spacing easily in the JOptionPane message to line up my fields, I made my message look like this:
+(A) 1.50 – Plain Snow Cone
+
+ (B) 1.75 – Plain Cone with Cream etc...
+Rubric:
+Doesn’t use switch -100%
+Doesn’t use JOptionPane to ask for the snow cone option -20%
+Doesn’t show the options in JOptionPane -20%
+Doesn’t get the correct amount for the snow cone after tax -20%
+Doesn’t validate the option entered -20%
+Code is not properly formatted (indents, curly braces are aligned) -10%
+Doesn’t display the message -20%
+*** This assignment is the proprietary property of The University of North Texas. You do NOT have permission to send it to anyone, especially a company like Chegg.com that writes programs and posts them on the Internet. That is a violation of copyright laws that can be grounds for prosecution.
+C. 23.2 – iAds Billing (6 Points)
+Write a program that tells the user how much to bill for Internet ads that have been clicked. Ask the user how many times the ad was clicked. Based on the response, find how much to charge per click, then calculate the cost for the ad. The chart for cost per click is below. Use if-else-if (pg 128) to determine if the price. Display the cost and price for the ad. Use Scanner (pgs 85-89) to get and display data to the user.
+Clicks Price
+1-50 .20/ea 51-150 .18/ea 151-300 .15/ea Over 300 .12/ea
+Sample output for some different numbers of clicks:
+There were 25 ad clicks at a rate of 0.20 for a total cost of $5.00 There were 127 ad clicks at a rate of 0.18 for a total cost of $22.86 There were 150 ad clicks at a rate of 0.18 for a total cost of $27.00 There were 500 ad clicks at a rate of 0.12 for a total cost of $60.00
+Hints/Tips:
+Use Scanner and format the numbers using printf (pg 160-171).
+Be sure to check the clicks where they change price to make sure the correct price is used (such as 150 and 151 clicks).
+It took me about 16 minutes to complete.
+Rubric:
+
+ Doesn’t use if-else-if -100%
+Doesn’t get number of clicks from user -20%
+Doesn’t calculate the ad cost correctly -20%
+Code is not properly formatted (indents, curly braces are aligned) -10% Doesn’t display results -20%
